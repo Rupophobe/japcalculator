@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { withStyles } from "@material-ui/core/styles";
 import { CSSProperties } from "@material-ui/styles";
 import { CustomTheme } from "../../style/theme";
-//import { Button } from "@material-ui/core";
+import { Button } from "@material-ui/core";
 
 import kanjiSun from "../../assets/kanji/Kanji sun.svg";
 import kanjiBook from "../../assets/kanji/Kanji book.svg";
@@ -13,7 +13,7 @@ import kanjiLeft from "../../assets/kanji/Kanji-left.svg";
 import { FOOD_ITEMS, FoodItem } from "../../data/food";
 import { FoodTile } from "../../components";
 
-// import { sendData } from "../../utils/send-data";
+import { sendData } from "../../utils/send-data";
 
 type ClassNames =
   | "container"
@@ -78,12 +78,13 @@ export const CalculatorPage: React.FC<Props> = (props: Props) => {
             </div>
           </div>
           <div className={classes.buttonContainer}>
-            <div style={{color:"#b02121", fontWeight:"bold"}}>{result}</div>&nbsp;Kcal
             {
-            //<Button variant="contained" onClick={sendData(result)}>
-            //  {result} Kcal
-            //</Button>
-}
+            // <div style={{color:"#b02121", fontWeight:"bold"}}>{result}</div>&nbsp;Kcal
+            }
+            <Button variant="contained" onClick={sendData(result)}>
+              {result} Kcal
+            </Button>
+
           </div>
         </div>
         <div className={classes.lateralBar}>
@@ -188,7 +189,7 @@ const styles = (theme: CustomTheme): Record<ClassNames, CSSProperties> => ({
     marginBottom: theme.spacing(3),
     marginTop: theme.spacing(3),
     fontSize: 50,
-    
+    fontFamily: "Festive",
   },
   lateralBar: {
     display: "flex",
